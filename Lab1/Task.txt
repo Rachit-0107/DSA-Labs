@@ -1,0 +1,22 @@
+(a) Write a procedure createList(N) that generates N random numbers and stores them
+in a linear linked list Ls and returns Ls. All the allocation in this procedure must use
+myalloc. Output the total heap space allocated to a text file. N must be large (say 1
+million or more.)
+(b) Write a procedure createCycle(Ls) that tosses a coin – programmatically – to decide
+whether Ls must be linear or cyclic. If it must be cyclic, this procedure picks a random
+number, say r, and lets the last node in Ls point to (i.e. set its next to point to) the r th
+node from the head node. If it must be linear this procedure returns Ls as is.
+(c) Write a main program that creates a new linked list Ls using the createList and
+createCycle procedures. Note that such a list Ls may or may not be cyclic. The main
+program should classify Ls as linear or cyclic by invoking a procedure testCyclic that is
+declared in a header file cycle.h. 
+
+Hare-and-Tortoise algorithm:
+Maintain two pointers hare and tort such that hare jumps two nodes in the linked
+list when tort jumps one node. Repeat the jumps in lock-step until hare finds itself
+behind tort or in step with tort. Ensure that trivial/special cases are handled
+properly: empty list, singleton list, a list with two nodes, and a linear list (i.e. one that
+terminates.) 
+
+Implement cycle1.c, i.e. hare and the tortoise algorithm. Create an excel file
+(observations.xlsx) with three columns: value of N, Time Taken, Heap Space Used.
